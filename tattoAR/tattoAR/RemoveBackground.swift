@@ -34,6 +34,7 @@ class RemoveBackground: ObservableObject {
                let segmentationMap = observations.first?.featureValue.multiArrayValue {
                 let segmentationMask = segmentationMap.image(min: 0, max: 1)
                 self.outputImage = segmentationMask!.resized(to: self.inputImage.size)
+                self.outputImage = self.maskInputImage()
             }
         }
     }
@@ -46,7 +47,7 @@ class RemoveBackground: ObservableObject {
         if let compositeImage = CIFilter(name: "CIBlendWithMask", parameters: [
             kCIInputImageKey: beginImage,
             kCIInputBackgroundImageKey: background,
-            kCIOutputImageKey: mask])?.outputImage {
+            kCIInputMaskImageKey: mask])?.outputImage {
             let ciContext = CIContext(options: nil)
             let filteredImageReference = ciContext.createCGImage(compositeImage, from: compositeImage.extent)
             return UIImage(cgImage: filteredImageReference!)
