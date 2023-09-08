@@ -7,11 +7,32 @@
 import CoreML
 import SwiftUI
 import Vision
+import PhotosUI
 
 class RemoveBackground: ObservableObject {
     private let model = try! VNCoreMLModel(for: DeepLabV3(configuration: MLModelConfiguration()).model)
     var inputImage: UIImage = UIImage()
     @Published var outputImage: UIImage?
+    @Published private(set) var selectedImage: UIImage? = nil
+    @Published var imageSelection: PhotosPickerItem? = nil {
+        didSet {
+            setImage(from: imageSelection)
+        }
+    }
+    private func setImage(from selection: PhotosPickerItem?) {
+        guard let selection else{return}
+        Task {
+            do {
+                let data = try await selection.loadTransferable(type: Data.self)
+                guard let data, let uiImage = UIImage(data: data) else {
+                    throw URLError(.badServerResponse)
+                }
+                selectedImage = uiImage
+            } catch {
+                print(error)
+            }
+        }
+    }
 
     func segmentImage() {
         let ciImage = CIImage(image: inputImage)!
