@@ -7,9 +7,10 @@
 
 import SwiftUI
 import PhotosUI
+import VisionKit
 struct InputImageView: View {
     @State private var selectedItem: PhotosPickerItem?
-    var inputimage = UIImage(named: "SidePerson")
+    @State private var ontap = false
     @ObservedObject var bgRemover = RemoveBackground()
     var body: some View {
         VStack {
@@ -21,23 +22,26 @@ struct InputImageView: View {
             .buttonStyle(.borderedProminent)
             
             if let image = bgRemover.selectedImage {
-                         Image(uiImage: image)
-                             .resizable()
+                ImageAnalyzerView(image: image)
                              .scaledToFit()
-
                              .cornerRadius(10)
-                if bgRemover.outputImage != nil {
-                    Image(uiImage: bgRemover.outputImage!)
-                        .resizable()
-                        .scaledToFit()
-                } else {
-                    Button("segment") {
-                        bgRemover.inputImage = image
-                        bgRemover.segmentImage()
-                    }
-                }
+                     
+//                if bgRemover.outputImage != nil {
+//                    Image(uiImage: bgRemover.outputImage!)
+//                        .resizable()
+//                        .scaledToFit()
+//                } else {
+//                    Button("segment") {
+//                        bgRemover.inputImage = image
+//                        bgRemover.segmentImage()
+//                    }
+//                }
                      }
 
+
         }.padding()
+//            .sheet(isPresented: $ontap) {
+//                Liveim
+//            }
     }
 }

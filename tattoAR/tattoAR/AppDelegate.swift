@@ -14,13 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let firstView = InputImageView()
-        let hostingController = UIHostingController(rootView: firstView)
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = hostingController
-        window.makeKeyAndVisible()
-        self.window = window
-        return true
+        window = UIWindow(frame: UIScreen.main.bounds)
+         window?.makeKeyAndVisible()
+         window?.backgroundColor = .systemBackground
+         window?.rootViewController = MainViewController()
+
+         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

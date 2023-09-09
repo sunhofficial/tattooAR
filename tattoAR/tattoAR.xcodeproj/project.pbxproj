@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C75D78C62AAC47CD00508BCB /* VisionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D78C52AAC47CD00508BCB /* VisionImageView.swift */; };
+		C75D78C82AAC4A7100508BCB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D78C72AAC4A7100508BCB /* MainViewController.swift */; };
+		C75D78EA2AAC504C00508BCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D78E92AAC504C00508BCB /* SceneDelegate.swift */; };
+		C75D78ED2AAC50A600508BCB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C75D78EC2AAC50A600508BCB /* SnapKit */; };
 		C79FED0E2AA9A7BC00527F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */; };
 		C79FED102AA9A7BC00527F67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C79FED0F2AA9A7BC00527F67 /* art.scnassets */; };
 		C79FED122AA9A7BC00527F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED112AA9A7BC00527F67 /* ViewController.swift */; };
@@ -33,9 +37,13 @@
 		C79FED452AAA2D3D00527F67 /* CVPixelBuffer+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED342AAA2D3D00527F67 /* CVPixelBuffer+Resize.swift */; };
 		C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED352AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift */; };
 		C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED472AAA40F100527F67 /* InputImageView.swift */; };
+		C7E55F132AAC3B2F00095CE1 /* ImageAnalyzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E55F122AAC3B2F00095CE1 /* ImageAnalyzerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C75D78C52AAC47CD00508BCB /* VisionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionImageView.swift; sourceTree = "<group>"; };
+		C75D78C72AAC4A7100508BCB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C75D78E92AAC504C00508BCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C79FED0A2AA9A7BC00527F67 /* tattoAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattoAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79FED0F2AA9A7BC00527F67 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -63,6 +71,7 @@
 		C79FED342AAA2D3D00527F67 /* CVPixelBuffer+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Resize.swift"; sourceTree = "<group>"; };
 		C79FED352AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Rotate.swift"; sourceTree = "<group>"; };
 		C79FED472AAA40F100527F67 /* InputImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageView.swift; sourceTree = "<group>"; };
+		C7E55F122AAC3B2F00095CE1 /* ImageAnalyzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75D78ED2AAC50A600508BCB /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +114,10 @@
 				C79FED202AA9A7EE00527F67 /* DeepLabV3.mlmodel */,
 				C79FED222AA9AA2100527F67 /* RemoveBackground.swift */,
 				C79FED472AAA40F100527F67 /* InputImageView.swift */,
+				C75D78E92AAC504C00508BCB /* SceneDelegate.swift */,
+				C7E55F122AAC3B2F00095CE1 /* ImageAnalyzerView.swift */,
+				C75D78C52AAC47CD00508BCB /* VisionImageView.swift */,
+				C75D78C72AAC4A7100508BCB /* MainViewController.swift */,
 				C79FED242AAA2D3D00527F67 /* CoreMLHelpers */,
 			);
 			path = tattoAR;
@@ -149,6 +163,9 @@
 			dependencies = (
 			);
 			name = tattoAR;
+			packageProductDependencies = (
+				C75D78EC2AAC50A600508BCB /* SnapKit */,
+			);
 			productName = tattoAR;
 			productReference = C79FED0A2AA9A7BC00527F67 /* tattoAR.app */;
 			productType = "com.apple.product-type.application";
@@ -177,6 +194,9 @@
 				Base,
 			);
 			mainGroup = C79FED012AA9A7BC00527F67;
+			packageReferences = (
+				C75D78EB2AAC50A600508BCB /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C79FED0B2AA9A7BC00527F67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -211,6 +231,7 @@
 				C79FED452AAA2D3D00527F67 /* CVPixelBuffer+Resize.swift in Sources */,
 				C79FED442AAA2D3D00527F67 /* MLMultiArray+Image.swift in Sources */,
 				C79FED212AA9A7EE00527F67 /* DeepLabV3.mlmodel in Sources */,
+				C75D78C62AAC47CD00508BCB /* VisionImageView.swift in Sources */,
 				C79FED412AAA2D3D00527F67 /* CGImage+CVPixelBuffer.swift in Sources */,
 				C79FED362AAA2D3D00527F67 /* Array+Extensions.swift in Sources */,
 				C79FED122AA9A7BC00527F67 /* ViewController.swift in Sources */,
@@ -224,8 +245,11 @@
 				C79FED3E2AAA2D3D00527F67 /* MLModel+Images.swift in Sources */,
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
 				C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */,
+				C7E55F132AAC3B2F00095CE1 /* ImageAnalyzerView.swift in Sources */,
+				C75D78EA2AAC504C00508BCB /* SceneDelegate.swift in Sources */,
 				C79FED3F2AAA2D3D00527F67 /* CoreML+Combine.swift in Sources */,
 				C79FED3D2AAA2D3D00527F67 /* MLMultiArray+Helpers.swift in Sources */,
+				C75D78C82AAC4A7100508BCB /* MainViewController.swift in Sources */,
 				C79FED372AAA2D3D00527F67 /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -356,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +399,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NG2NLR2Z86;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 통해 촤령ㅇ해도 될까요?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -404,7 +428,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NG2NLR2Z86;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 통해 촤령ㅇ해도 될까요?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -446,6 +470,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C75D78EB2AAC50A600508BCB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C75D78EC2AAC50A600508BCB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C75D78EB2AAC50A600508BCB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C79FED022AA9A7BC00527F67 /* Project object */;
 }
