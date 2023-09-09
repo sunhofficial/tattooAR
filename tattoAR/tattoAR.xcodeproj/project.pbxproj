@@ -11,6 +11,7 @@
 		C75D78C82AAC4A7100508BCB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D78C72AAC4A7100508BCB /* MainViewController.swift */; };
 		C75D78EA2AAC504C00508BCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D78E92AAC504C00508BCB /* SceneDelegate.swift */; };
 		C75D78ED2AAC50A600508BCB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C75D78EC2AAC50A600508BCB /* SnapKit */; };
+		C75D790E2AACE9FC00508BCB /* ImagePickerSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D790D2AACE9FC00508BCB /* ImagePickerSelectView.swift */; };
 		C79FED0E2AA9A7BC00527F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */; };
 		C79FED102AA9A7BC00527F67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C79FED0F2AA9A7BC00527F67 /* art.scnassets */; };
 		C79FED122AA9A7BC00527F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED112AA9A7BC00527F67 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		C75D78C52AAC47CD00508BCB /* VisionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionImageView.swift; sourceTree = "<group>"; };
 		C75D78C72AAC4A7100508BCB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C75D78E92AAC504C00508BCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C75D790D2AACE9FC00508BCB /* ImagePickerSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerSelectView.swift; sourceTree = "<group>"; };
 		C79FED0A2AA9A7BC00527F67 /* tattoAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattoAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79FED0F2AA9A7BC00527F67 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				C7E55F122AAC3B2F00095CE1 /* ImageAnalyzerView.swift */,
 				C75D78C52AAC47CD00508BCB /* VisionImageView.swift */,
 				C75D78C72AAC4A7100508BCB /* MainViewController.swift */,
+				C75D790D2AACE9FC00508BCB /* ImagePickerSelectView.swift */,
 				C79FED242AAA2D3D00527F67 /* CoreMLHelpers */,
 			);
 			path = tattoAR;
@@ -244,6 +247,7 @@
 				C79FED232AA9AA2100527F67 /* RemoveBackground.swift in Sources */,
 				C79FED3E2AAA2D3D00527F67 /* MLModel+Images.swift in Sources */,
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
+				C75D790E2AACE9FC00508BCB /* ImagePickerSelectView.swift in Sources */,
 				C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */,
 				C7E55F132AAC3B2F00095CE1 /* ImageAnalyzerView.swift in Sources */,
 				C75D78EA2AAC504C00508BCB /* SceneDelegate.swift in Sources */,

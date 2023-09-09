@@ -64,8 +64,16 @@ extension MainViewController : UIImagePickerControllerDelegate, UINavigationCont
         } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             newImage = possibleImage        // 원본 이미지가 있을 경우
         }
-        self.photoImageView.image = newImage
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            let destination = ImagePickerSelectView(selectedImage: newImage)
+            destination.modalPresentationStyle = .fullScreen
+            self.present(destination,animated: true)
+          }
+
+//        present(ImagePickerSelectView(selectedImage: newImage),animated: true)
+
+//        self.photoImageView.image = newImage
+//        dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -81,7 +89,7 @@ extension MainViewController {
         case .gallery:
             imagePicker.sourceType = .photoLibrary
         }
-        imagePicker.allowsEditing = true
+//        imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true)
     }
 }
