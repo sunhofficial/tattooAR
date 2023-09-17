@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71ECC812AB6D75D00E3127E /* Color+.swift */; };
+		C71ECC842AB6D76500E3127E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71ECC832AB6D76500E3127E /* UIColor+.swift */; };
 		C75D79142AACF80100508BCB /* ImageLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D79132AACF80100508BCB /* ImageLift.swift */; };
 		C79FED0E2AA9A7BC00527F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */; };
 		C79FED102AA9A7BC00527F67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C79FED0F2AA9A7BC00527F67 /* art.scnassets */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C71ECC812AB6D75D00E3127E /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		C71ECC832AB6D76500E3127E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		C75D79132AACF80100508BCB /* ImageLift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLift.swift; sourceTree = "<group>"; };
 		C79FED0A2AA9A7BC00527F67 /* tattoAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattoAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71ECC802AB6D75300E3127E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C71ECC812AB6D75D00E3127E /* Color+.swift */,
+				C71ECC832AB6D76500E3127E /* UIColor+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C79FED012AA9A7BC00527F67 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		C79FED0C2AA9A7BC00527F67 /* tattoAR */ = {
 			isa = PBXGroup;
 			children = (
+				C71ECC802AB6D75300E3127E /* Extensions */,
 				C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */,
 				C79FED0F2AA9A7BC00527F67 /* art.scnassets */,
 				C79FED112AA9A7BC00527F67 /* ViewController.swift */,
@@ -212,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75D79142AACF80100508BCB /* ImageLift.swift in Sources */,
+				C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */,
 				C79FED402AAA2D3D00527F67 /* CVPixelBuffer+Create.swift in Sources */,
 				C79FED422AAA2D3D00527F67 /* NonMaxSuppression.swift in Sources */,
 				C79FED392AAA2D3D00527F67 /* Predictions.swift in Sources */,
@@ -233,6 +248,7 @@
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
 				C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */,
 				C79FED3F2AAA2D3D00527F67 /* CoreML+Combine.swift in Sources */,
+				C71ECC842AB6D76500E3127E /* UIColor+.swift in Sources */,
 				C79FED3D2AAA2D3D00527F67 /* MLMultiArray+Helpers.swift in Sources */,
 				C79FED372AAA2D3D00527F67 /* Math.swift in Sources */,
 			);
