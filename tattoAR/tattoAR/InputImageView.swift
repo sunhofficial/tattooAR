@@ -28,6 +28,7 @@ struct InputImageView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                        .saturation(1.0 - sliderValue / 10 )
                                 } else{
                                     Image(systemName: "photo.fill")
                                         .resizable()
