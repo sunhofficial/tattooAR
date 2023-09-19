@@ -37,6 +37,7 @@
 		C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED352AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift */; };
 		C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED472AAA40F100527F67 /* InputImageView.swift */; };
 		C7A5AC732AADF043009124C8 /* InputImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */; };
+		C7D75E7A2AB772D9008BAEBF /* TatooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D75E792AB772D9008BAEBF /* TatooView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		C79FED352AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Rotate.swift"; sourceTree = "<group>"; };
 		C79FED472AAA40F100527F67 /* InputImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageView.swift; sourceTree = "<group>"; };
 		C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageViewModel.swift; sourceTree = "<group>"; };
+		C7D75E792AB772D9008BAEBF /* TatooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatooView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				C79FED472AAA40F100527F67 /* InputImageView.swift */,
 				C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */,
 				C75D79132AACF80100508BCB /* ImageLift.swift */,
+				C7D75E792AB772D9008BAEBF /* TatooView.swift */,
 				C79FED242AAA2D3D00527F67 /* CoreMLHelpers */,
 			);
 			path = tattoAR;
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D75E7A2AB772D9008BAEBF /* TatooView.swift in Sources */,
 				C75D79142AACF80100508BCB /* ImageLift.swift in Sources */,
 				C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */,
 				C79FED402AAA2D3D00527F67 /* CVPixelBuffer+Create.swift in Sources */,

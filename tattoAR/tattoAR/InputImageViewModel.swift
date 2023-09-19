@@ -12,6 +12,7 @@ import VisionKit
 class InputImageViewModel: ObservableObject {
     @Published private(set) var imageView = LiftImageView()
     @Published private(set) var objectImage : UIImage? = nil
+//    @Published private(set) var isSucceedImage: Bool = false
     @Published var imageSelection: PhotosPickerItem? = nil {
         didSet {
             setImage(from: imageSelection)
@@ -37,14 +38,18 @@ class InputImageViewModel: ObservableObject {
     }
     private func analyzeImage() async throws {
         Task{
-            if let image = imageView.image {
-                let configuration = ImageAnalyzer.Configuration([.text, .machineReadableCode])
-                let analysis = try? await analyzer.analyze(image, configuration: configuration)
-                if let analysis = analysis {
-                    interaction.analysis = analysis
-                    interaction.preferredInteractionTypes = .imageSubject
-                    objectImage = try await interaction.image(for: interaction.subjects)
+            do{
+                if let image = imageView.image {
+                    let configuration = ImageAnalyzer.Configuration([.text, .machineReadableCode])
+                    let analysis = try? await analyzer.analyze(image, configuration: configuration)
+                    if let analysis = analysis {
+                        interaction.analysis = analysis
+                        interaction.preferredInteractionTypes = .imageSubject
+                        objectImage = try await interaction.image(for: interaction.subjects)
+                    }
                 }
+            } catch {
+                print("\(error)")
             }
         }
     }
