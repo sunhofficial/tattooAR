@@ -8,6 +8,6 @@
 import SwiftUI
 struct TatooView: View {
     var body: some View {
-        Text("je;")
+        ARViewContainer().ignoresSafeArea(.all)
     }
 }

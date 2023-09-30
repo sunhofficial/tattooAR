@@ -10,14 +10,14 @@
 		C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71ECC812AB6D75D00E3127E /* Color+.swift */; };
 		C71ECC842AB6D76500E3127E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71ECC832AB6D76500E3127E /* UIColor+.swift */; };
 		C75D79142AACF80100508BCB /* ImageLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D79132AACF80100508BCB /* ImageLift.swift */; };
-		C77DD9772AC6480D005F398C /* HandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9762AC6480D005F398C /* HandModel.mlmodel */; };
+		C77DD9792AC64B27005F398C /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9782AC64B27005F398C /* ARViewContainer.swift */; };
+		C77DD9812AC66BB6005F398C /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9802AC66BB6005F398C /* ARViewController.swift */; };
+		C77DD9872AC7E1FD005F398C /* HandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9862AC7E1FD005F398C /* HandModel.mlmodel */; };
 		C79FED0E2AA9A7BC00527F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */; };
 		C79FED102AA9A7BC00527F67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C79FED0F2AA9A7BC00527F67 /* art.scnassets */; };
-		C79FED122AA9A7BC00527F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED112AA9A7BC00527F67 /* ViewController.swift */; };
 		C79FED152AA9A7BC00527F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79FED132AA9A7BC00527F67 /* Main.storyboard */; };
 		C79FED172AA9A7BD00527F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C79FED162AA9A7BD00527F67 /* Assets.xcassets */; };
 		C79FED1A2AA9A7BD00527F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79FED182AA9A7BD00527F67 /* LaunchScreen.storyboard */; };
-		C79FED232AA9AA2100527F67 /* RemoveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED222AA9AA2100527F67 /* RemoveBackground.swift */; };
 		C79FED362AAA2D3D00527F67 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED252AAA2D3D00527F67 /* Array+Extensions.swift */; };
 		C79FED372AAA2D3D00527F67 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED262AAA2D3D00527F67 /* Math.swift */; };
 		C79FED382AAA2D3D00527F67 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED272AAA2D3D00527F67 /* UIImage+CVPixelBuffer.swift */; };
@@ -44,15 +44,15 @@
 		C71ECC812AB6D75D00E3127E /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		C71ECC832AB6D76500E3127E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		C75D79132AACF80100508BCB /* ImageLift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLift.swift; sourceTree = "<group>"; };
-		C77DD9762AC6480D005F398C /* HandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandModel.mlmodel; sourceTree = SOURCE_ROOT; };
+		C77DD9782AC64B27005F398C /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		C77DD9802AC66BB6005F398C /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		C77DD9862AC7E1FD005F398C /* HandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandModel.mlmodel; sourceTree = SOURCE_ROOT; };
 		C79FED0A2AA9A7BC00527F67 /* tattoAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattoAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79FED0F2AA9A7BC00527F67 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		C79FED112AA9A7BC00527F67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C79FED142AA9A7BC00527F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C79FED162AA9A7BD00527F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C79FED192AA9A7BD00527F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C79FED222AA9AA2100527F67 /* RemoveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBackground.swift; sourceTree = "<group>"; };
 		C79FED252AAA2D3D00527F67 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		C79FED262AAA2D3D00527F67 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		C79FED272AAA2D3D00527F67 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
@@ -117,16 +117,16 @@
 				C71ECC802AB6D75300E3127E /* Extensions */,
 				C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */,
 				C79FED0F2AA9A7BC00527F67 /* art.scnassets */,
-				C79FED112AA9A7BC00527F67 /* ViewController.swift */,
 				C79FED132AA9A7BC00527F67 /* Main.storyboard */,
 				C79FED162AA9A7BD00527F67 /* Assets.xcassets */,
 				C79FED182AA9A7BD00527F67 /* LaunchScreen.storyboard */,
-				C79FED222AA9AA2100527F67 /* RemoveBackground.swift */,
+				C77DD9862AC7E1FD005F398C /* HandModel.mlmodel */,
 				C79FED472AAA40F100527F67 /* InputImageView.swift */,
+				C77DD9782AC64B27005F398C /* ARViewContainer.swift */,
+				C77DD9802AC66BB6005F398C /* ARViewController.swift */,
 				C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */,
 				C75D79132AACF80100508BCB /* ImageLift.swift */,
 				C7D75E792AB772D9008BAEBF /* TatooView.swift */,
-				C77DD9762AC6480D005F398C /* HandModel.mlmodel */,
 				C79FED242AAA2D3D00527F67 /* CoreMLHelpers */,
 			);
 			path = tattoAR;
@@ -233,13 +233,14 @@
 				C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */,
 				C79FED402AAA2D3D00527F67 /* CVPixelBuffer+Create.swift in Sources */,
 				C79FED422AAA2D3D00527F67 /* NonMaxSuppression.swift in Sources */,
+				C77DD9792AC64B27005F398C /* ARViewContainer.swift in Sources */,
+				C77DD9872AC7E1FD005F398C /* HandModel.mlmodel in Sources */,
 				C79FED392AAA2D3D00527F67 /* Predictions.swift in Sources */,
-				C77DD9772AC6480D005F398C /* HandModel.mlmodel in Sources */,
+				C77DD9812AC66BB6005F398C /* ARViewController.swift in Sources */,
 				C79FED452AAA2D3D00527F67 /* CVPixelBuffer+Resize.swift in Sources */,
 				C79FED442AAA2D3D00527F67 /* MLMultiArray+Image.swift in Sources */,
 				C79FED412AAA2D3D00527F67 /* CGImage+CVPixelBuffer.swift in Sources */,
 				C79FED362AAA2D3D00527F67 /* Array+Extensions.swift in Sources */,
-				C79FED122AA9A7BC00527F67 /* ViewController.swift in Sources */,
 				C79FED3C2AAA2D3D00527F67 /* UIImage+RawBytes.swift in Sources */,
 				C79FED0E2AA9A7BC00527F67 /* AppDelegate.swift in Sources */,
 				C79FED382AAA2D3D00527F67 /* UIImage+CVPixelBuffer.swift in Sources */,
@@ -247,7 +248,6 @@
 				C79FED3B2AAA2D3D00527F67 /* CGImagePropertyOrientation.swift in Sources */,
 				C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */,
 				C79FED3A2AAA2D3D00527F67 /* UIImage+Extensions.swift in Sources */,
-				C79FED232AA9AA2100527F67 /* RemoveBackground.swift in Sources */,
 				C79FED3E2AAA2D3D00527F67 /* MLModel+Images.swift in Sources */,
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
 				C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */,
