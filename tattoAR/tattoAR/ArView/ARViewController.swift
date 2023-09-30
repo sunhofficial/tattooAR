@@ -8,10 +8,18 @@
 import UIKit
 import CoreML
 import ARKit
+enum HandPose {
+    case rightRock
+    case leftRock
+    case background
+}
 final class ARViewController: UIViewController {
     var arScnView: ARSCNView!
     private var frameCounter: Int = 0 //매프레임마다 손모양 인식이 아니라 일정한 간격으로 수행하면 좀 더 부드러워짐
     private let handPosePredictionInterval: Int = 30 //30frame마다
+    var tatooImage: UIImage
+    var blackPoint: Double = 0.0
+    private var handPose: HandPose = .background
     private var model = try? HandModel(configuration: MLModelConfiguration())
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +30,17 @@ final class ARViewController: UIViewController {
         arScnView.session.run(configuration)
 
     }
+    init(tatooImage: UIImage, blackPoint: Double) {
+        self.tatooImage = tatooImage
+        self.blackPoint = blackPoint
+        super.init(nibName: nil, bundle: nil)
 
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
 }
 
@@ -56,11 +74,11 @@ extension ARViewController: ARSessionDelegate {
             if confidence > 0.8 {
                 switch label {
                 case "rightRock":
-                    print("right")
+                    handPose = .rightRock
                 case "leftRock":
-                    print("left")
+                    handPose = .leftRock
                 default:
-                    print(label)
+                    handPose = .background
                     break
                 }
             }

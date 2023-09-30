@@ -7,7 +7,9 @@
 
 import SwiftUI
 struct TatooView: View {
+    var tatooImage: UIImage
+    var blackPoint: Double
     var body: some View {
-        ARViewContainer().ignoresSafeArea(.all)
+        ARViewContainer(tatooImage: tatooImage, blackPoint: blackPoint).ignoresSafeArea(.all)
     }
 }

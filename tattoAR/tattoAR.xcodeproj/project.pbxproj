@@ -95,6 +95,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C77DD9882AC7EF5F005F398C /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				C79FED472AAA40F100527F67 /* InputImageView.swift */,
+				C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */,
+				C75D79132AACF80100508BCB /* ImageLift.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		C77DD9892AC7EF70005F398C /* ArView */ = {
+			isa = PBXGroup;
+			children = (
+				C7D75E792AB772D9008BAEBF /* TatooView.swift */,
+				C77DD9802AC66BB6005F398C /* ARViewController.swift */,
+				C77DD9782AC64B27005F398C /* ARViewContainer.swift */,
+			);
+			path = ArView;
+			sourceTree = "<group>";
+		};
 		C79FED012AA9A7BC00527F67 = {
 			isa = PBXGroup;
 			children = (
@@ -121,12 +141,8 @@
 				C79FED162AA9A7BD00527F67 /* Assets.xcassets */,
 				C79FED182AA9A7BD00527F67 /* LaunchScreen.storyboard */,
 				C77DD9862AC7E1FD005F398C /* HandModel.mlmodel */,
-				C79FED472AAA40F100527F67 /* InputImageView.swift */,
-				C77DD9782AC64B27005F398C /* ARViewContainer.swift */,
-				C77DD9802AC66BB6005F398C /* ARViewController.swift */,
-				C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */,
-				C75D79132AACF80100508BCB /* ImageLift.swift */,
-				C7D75E792AB772D9008BAEBF /* TatooView.swift */,
+				C77DD9882AC7EF5F005F398C /* MainView */,
+				C77DD9892AC7EF70005F398C /* ArView */,
 				C79FED242AAA2D3D00527F67 /* CoreMLHelpers */,
 			);
 			path = tattoAR;
