@@ -11,5 +11,6 @@ struct TatooView: View {
     var blackPoint: Double
     var body: some View {
         ARViewContainer(tatooImage: tatooImage, blackPoint: blackPoint).ignoresSafeArea(.all)
+          
     }
 }

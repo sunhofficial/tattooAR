@@ -34,13 +34,17 @@ final class ARViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         arScnView.session.run(configuration)
         arScnView.addSubview(tattoImageView)
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveImage))
-//        arScnView.addGestureRecognizer(tapGestureRecognizer)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveImage))
+        arScnView.addGestureRecognizer(tapGestureRecognizer)
 
     }
-//    @objc func saveImage() {
-//        UIImageWriteToSavedPhotosAlbum(arScnView.snapshot(), nil, nil, nil)
-//    }
+    @objc func saveImage() {
+//        let render = UIGraphicsImageRenderer(size: arScnView.bounds.size)
+//        let image = render.image { ctc in
+//            layer.render(in: ctc.cgContext)
+//        }
+        UIImageWriteToSavedPhotosAlbum(self.view.snapshot!, nil, nil, nil)
+    }
     init(tatooImage: UIImage, blackPoint: Double) {
         self.tatooImage = tatooImage
         self.blackPoint = blackPoint
@@ -123,5 +127,13 @@ extension ARViewController: ARSessionDelegate {
             print("PREDICTION ERRRRRROR")
         }
         return .background
+    }
+}
+extension UIView {
+    var snapshot: UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+        defer { UIGraphicsEndImageContext() }
+        drawHierarchy(in: bounds, afterScreenUpdates: true)
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
