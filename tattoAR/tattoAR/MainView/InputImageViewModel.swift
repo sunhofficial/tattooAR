@@ -53,6 +53,15 @@ class InputImageViewModel: ObservableObject {
             }
         }
     }
+    func applySaturationImage(to image: UIImage, slidervalue: Double) -> UIImage {
+        let ciimage = CIImage(image: image)
+          guard let filter = CIFilter(name: "CIColorControls") else { return image }
+          filter.setValue(ciimage, forKey: kCIInputImageKey)
+          filter.setValue(1.0 - slidervalue / 10 , forKey: kCIInputSaturationKey)
+        guard let result = filter.outputImage else{ return image}
+          guard let newCgImage = CIContext(options: nil).createCGImage(result, from: result.extent) else { return image }
+          return UIImage(cgImage: newCgImage)
+    }
 
 }
 

@@ -71,7 +71,7 @@ extension InputImageView {
             }, alignment: .top)
     }
     var NavigationBtn: some View {
-        NavigationLink(destination: TatooView(tatooImage: vm.objectImage ?? UIImage(), blackPoint: sliderValue)) {
+        NavigationLink(destination: TatooView(tatooImage: vm.applySaturationImage(to: vm.objectImage ?? UIImage(), slidervalue: sliderValue))) {
             HStack {
                 Image("TatooBtn")
                 Text("타투하러가기")

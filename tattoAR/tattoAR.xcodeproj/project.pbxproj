@@ -37,6 +37,7 @@
 		C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED352AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift */; };
 		C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED472AAA40F100527F67 /* InputImageView.swift */; };
 		C7A5AC732AADF043009124C8 /* InputImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */; };
+		C7B1EA5D2ACBEE6900C445CA /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */; };
 		C7D75E7A2AB772D9008BAEBF /* TatooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D75E792AB772D9008BAEBF /* TatooView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		C79FED352AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Rotate.swift"; sourceTree = "<group>"; };
 		C79FED472AAA40F100527F67 /* InputImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageView.swift; sourceTree = "<group>"; };
 		C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageViewModel.swift; sourceTree = "<group>"; };
+		C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C7D75E792AB772D9008BAEBF /* TatooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatooView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 			children = (
 				C71ECC812AB6D75D00E3127E /* Color+.swift */,
 				C71ECC832AB6D76500E3127E /* UIColor+.swift */,
+				C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
 				C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */,
 				C79FED3F2AAA2D3D00527F67 /* CoreML+Combine.swift in Sources */,
+				C7B1EA5D2ACBEE6900C445CA /* UIView+.swift in Sources */,
 				C71ECC842AB6D76500E3127E /* UIColor+.swift in Sources */,
 				C79FED3D2AAA2D3D00527F67 /* MLMultiArray+Helpers.swift in Sources */,
 				C79FED372AAA2D3D00527F67 /* Math.swift in Sources */,

@@ -9,6 +9,7 @@ import UIKit
 import CoreML
 import AVFoundation
 import ARKit
+
 enum HandPose {
     case rightRock
     case leftRock
@@ -19,7 +20,7 @@ final class ARViewController: UIViewController {
     private var frameCounter: Int = 0 //매프레임마다 손모양 인식이 아니라 일정한 간격으로 수행하면 좀 더 부드러워짐
     private let handPosePredictionInterval: Int = 100 //100frame마다
     var tatooImage: UIImage
-    var blackPoint: Double = 0.0
+
     //    private var handPose: HandPose = .background
     private var tattoImageView: UIImageView
     private var frameSize: Double = 0.0
@@ -36,18 +37,12 @@ final class ARViewController: UIViewController {
         arScnView.addSubview(tattoImageView)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveImage))
         arScnView.addGestureRecognizer(tapGestureRecognizer)
-
     }
     @objc func saveImage() {
-//        let render = UIGraphicsImageRenderer(size: arScnView.bounds.size)
-//        let image = render.image { ctc in
-//            layer.render(in: ctc.cgContext)
-//        }
         UIImageWriteToSavedPhotosAlbum(self.view.snapshot!, nil, nil, nil)
     }
-    init(tatooImage: UIImage, blackPoint: Double) {
+    init(tatooImage: UIImage) {
         self.tatooImage = tatooImage
-        self.blackPoint = blackPoint
         self.tattoImageView = UIImageView(image: tatooImage)
         tattoImageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         super.init(nibName: nil, bundle: nil)
@@ -129,11 +124,4 @@ extension ARViewController: ARSessionDelegate {
         return .background
     }
 }
-extension UIView {
-    var snapshot: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
-        defer { UIGraphicsEndImageContext() }
-        drawHierarchy(in: bounds, afterScreenUpdates: true)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-}
+

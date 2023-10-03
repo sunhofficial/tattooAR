@@ -11,10 +11,9 @@ import VisionKit
 struct ARViewContainer: UIViewControllerRepresentable {
     typealias UIViewControllerType = ARViewController
     var tatooImage: UIImage
-    var blackPoint: Double
 
     func makeUIViewController(context: Context) -> ARViewController {
-        let viewController = ARViewController(tatooImage: tatooImage, blackPoint: blackPoint)
+        let viewController = ARViewController(tatooImage: tatooImage)
         return viewController
     }
     
