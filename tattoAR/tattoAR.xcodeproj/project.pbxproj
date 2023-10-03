@@ -419,7 +419,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NG2NLR2Z86;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "needs permission to access Camera on your device";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "needs permission to access photos on your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -448,7 +449,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NG2NLR2Z86;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "needs permission to access Camera on your device";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "needs permission to access photos on your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
