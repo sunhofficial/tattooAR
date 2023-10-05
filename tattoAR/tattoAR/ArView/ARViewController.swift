@@ -20,13 +20,11 @@ final class ARViewController: UIViewController {
     private var frameCounter: Int = 0 //매프레임마다 손모양 인식이 아니라 일정한 간격으로 수행하면 좀 더 부드러워짐
     private let handPosePredictionInterval: Int = 100 //100frame마다
     var tatooImage: UIImage
-
-    //    private var handPose: HandPose = .background
+    private var snapShot: UIImage?
     private var tattoImageView: UIImageView
     private var frameSize: Double = 0.0
     private var model = try? HandModel(configuration: MLModelConfiguration())
-    var x: Double = 0
-    var y: Double = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         arScnView = ARSCNView(frame: view.bounds)
@@ -35,12 +33,47 @@ final class ARViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         arScnView.session.run(configuration)
         arScnView.addSubview(tattoImageView)
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveImage))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveAlert))
         arScnView.addGestureRecognizer(tapGestureRecognizer)
     }
-    @objc func saveImage() {
-        UIImageWriteToSavedPhotosAlbum(self.view.snapshot!, nil, nil, nil)
+
+    @objc private func saveAlert() {
+        let showAlert = UIAlertController(title: "해당하는 타투를 저장할까요?", message: nil, preferredStyle: .alert)
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 250, height: 230))
+        snapShot = view.snapshot
+        imageView.image = snapShot
+        showAlert.view.addSubview(imageView)
+        let height = NSLayoutConstraint(item: showAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 340)
+        let width = NSLayoutConstraint(item: showAlert.view!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        showAlert.view.addConstraint(height)
+        showAlert.view.addConstraint(width)
+        showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.saveImage()
+        }))
+        showAlert.addAction(UIAlertAction(title: "NO", style: .destructive))
+        self.present(showAlert,animated: true, completion: nil)
     }
+
+    private func saveImage() {
+        UIImageWriteToSavedPhotosAlbum(snapShot!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // 이미지 저장 중에 오류가 발생한 경우
+            let alert = UIAlertController(title: "오류", message: "이미지를 저장하는 동안 오류가 발생했습니다: \(error.localizedDescription)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            // 이미지가 성공적으로 저장된 경우
+            let alert = UIAlertController(title: "성공", message: "이미지가 성공적으로 저장되었습니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
     init(tatooImage: UIImage) {
         self.tatooImage = tatooImage
         self.tattoImageView = UIImageView(image: tatooImage)
@@ -75,7 +108,7 @@ extension ARViewController: ARSessionDelegate {
             let handPose = makePrediction(handPoseObservation: handObservation)
             if handPose != .background {
                 let tattoPoint = findTatooSpot(handPoseObservation: handObservation)
-                tattoImageView.frame =  CGRect(x: tattoPoint.x, y: tattoPoint.y , width: frameSize, height: frameSize)
+                tattoImageView.frame =  CGRect(x: tattoPoint.x, y: tattoPoint.y , width: frameSize , height: frameSize )
             }
             else {
                 tattoImageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -95,7 +128,7 @@ extension ARViewController: ARSessionDelegate {
         let distance = sqrt(pow(distanceX, 2) + pow(distanceY, 2))
         let newX = sqrt(distance / (inclination * inclination + 1) ) + wristSpot.location.x
         let newY = wristSpot.location.y + inclination * sqrt(distance / (inclination * inclination + 1))
-        frameSize = distanceX * 500
+        frameSize = distanceX * 800
         return CGPoint(x:newY * UIScreen.main.bounds.width, y: newX * UIScreen.main.bounds.height)
     }
 
