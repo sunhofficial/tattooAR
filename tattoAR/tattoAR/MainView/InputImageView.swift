@@ -55,10 +55,11 @@ extension InputImageView {
                 .overlay(
                     Group{
                         if let objectImage = vm.objectImage {
-                            Image(uiImage: objectImage)
+                            Image(uiImage: isBlackToggle ? vm.applySketchEffect(to: objectImage) : objectImage)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+
                         } else{
                             VStack{
                                 Image(systemName: "photo.fill")
@@ -84,7 +85,7 @@ extension InputImageView {
                 .clipShape(Circle())
                 .frame(width: 64, height: 64)
                 .overlay(Circle().stroke(handtattooMode ? Color.mainColor : Color.black))
-                .opacity(handtattooMode ? 1 : 0.1)
+                .opacity(handtattooMode ? 1 : 0.3)
                 .onTapGesture {
                     handtattooMode = true
                 }
@@ -94,7 +95,7 @@ extension InputImageView {
                 .clipShape(Circle())
                 .frame(width: 64, height: 64)
                 .overlay(Circle().stroke(handtattooMode ?  Color.black : Color.mainColor))
-                .opacity(handtattooMode ? 0.1 : 1)
+                .opacity(handtattooMode ? 0.3 : 1)
                 .onTapGesture {
                     handtattooMode = false
                 }
