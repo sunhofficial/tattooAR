@@ -10,4 +10,6 @@ extension Color {
     static let backGround = Color(UIColor(hexCode: "272828"))
     static let graidentBtnColor = Color(UIColor(hexCode: "7158E2"))
     static let mainColor = Color(UIColor(hexCode: "C00BED"))
+    static let photoBackGround = Color(UIColor(hexCode: "2F3131"))
+    static let photoFontColor = Color(UIColor(hexCode: "757575"))
 }

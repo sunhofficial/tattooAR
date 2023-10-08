@@ -11,35 +11,47 @@ struct InputImageView: View {
     @ObservedObject var vm = InputImageViewModel()
     @State private var isFullScreenCoverPresented = false
     @State private var sliderValue = 0.0
+    @State private var isBlackToggle = false
+    @State private var handtattooMode = true
     var body: some View {
         NavigationStack {
             ZStack{
                 Color.backGround
                 VStack {
+                    HStack{
+                        Spacer()
+                        ColorToBlackBtn
+                    }
+                    .padding(.bottom,8)
                     PhotoPikerView
-                        .padding(.horizontal, 10)
-                        .padding(.top, 80)
-                    BlackSlider
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 10)
+                        .aspectRatio(CGSize(width: 1, height: 1.33), contentMode: .fit)
+                    ModeChoiceBtn
+                        .padding(.vertical, 16)
                     NavigationBtn
                         .padding(.horizontal, 10)
-                        .padding(.top, 70)
                 }
-                .padding()
+                .padding(.top,72)
+                .padding(.horizontal,16)
             }
             .ignoresSafeArea()
         }
     }
 }
 extension InputImageView {
+    var ColorToBlackBtn: some View {
+        Button {
+            isBlackToggle.toggle()
+        } label: {
+            Circle()
+                .fill(isBlackToggle ? AngularGradient(gradient: Gradient(colors: [.red,.orange,.yellow,.green,.blue,.purple,.red]),center: .center) : AngularGradient(gradient: Gradient(colors: [.black]), center: .center))
+                .frame(width: 32,height: 32)
+        }
+    }
+
     var PhotoPikerView: some View {
         PhotosPicker(selection: $vm.imageSelection, matching: .images) {
             Rectangle()
-                .fill(vm.objectImage != nil ? Color.white : Color.gray)
-                .opacity(0.7)
-                .frame(maxHeight: UIScreen.main.bounds.height/2)
-                .aspectRatio(1,contentMode: .fit)
+                .fill(vm.objectImage != nil ? Color.white : Color.photoBackGround)
                 .overlay(
                     Group{
                         if let objectImage = vm.objectImage {
@@ -47,42 +59,82 @@ extension InputImageView {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .saturation(1.0 - sliderValue / 10 )
                         } else{
-                            Image(systemName: "photo.fill")
-                                .resizable()
-                            .frame(width: 40,height: 40)}
+                            VStack{
+                                Image(systemName: "photo.fill")
+                                    .resizable()
+                                    .foregroundStyle(Color.photoFontColor)
+                                    .frame(width: 40,height: 40)
+                                    .padding(.bottom,10)
+                                Text("Click here to add an Image")
+                                    .font(.body)
+                                    .foregroundStyle(Color.photoFontColor)
+
+                            }
+                        }
+
                     }
                 )
         }
     }
-    var BlackSlider: some View {
-        Slider(value: $sliderValue, in: 0...10, step: 1)
-            .tint(.black)
-            .padding(.top,30)
-            .overlay(GeometryReader{ geo in
-                Text("\(sliderValue, specifier: "%.f")")
-                    .foregroundStyle(.black)
-                    .font(.system(size: 18, weight: .semibold))
-                    .alignmentGuide(HorizontalAlignment.leading){
-                        return $0[HorizontalAlignment.leading] - (geo.size.width - $0.width * 2) * sliderValue / 10  - 5
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }, alignment: .top)
+    var ModeChoiceBtn: some View {
+        HStack(spacing: 40){
+            Image("Arm")
+                .resizable()
+                .clipShape(Circle())
+                .frame(width: 64, height: 64)
+                .overlay(Circle().stroke(handtattooMode ? Color.mainColor : Color.black))
+                .opacity(handtattooMode ? 1 : 0.1)
+                .onTapGesture {
+                    handtattooMode = true
+                }
+
+            Image("FaceCamera")
+                .resizable()
+                .clipShape(Circle())
+                .frame(width: 64, height: 64)
+                .overlay(Circle().stroke(handtattooMode ?  Color.black : Color.mainColor))
+                .opacity(handtattooMode ? 0.1 : 1)
+                .onTapGesture {
+                    handtattooMode = false
+                }
+        }
     }
+
     var NavigationBtn: some View {
-        NavigationLink(destination: TatooView(tatooImage: vm.applySaturationImage(to: vm.objectImage ?? UIImage(), slidervalue: sliderValue))) {
+        NavigationLink(destination: TatooView(tatooImage: vm.applySketchEffect(to: vm.objectImage ?? UIImage()))) {
             HStack {
-                Image("TatooBtn")
-                Text("타투하러가기")
-                    .foregroundStyle(Color.black)
-                    .font(.system(size: 30, weight: .bold))
+                Label("타투하기", systemImage: "paintbrush")
+                    .foregroundStyle(Color.mainColor)
+                    .font(.system(size: 24, weight: .medium))
+                    .blur(radius: 8.0)
+                    .overlay {
+                        Label("타투하기", systemImage: "paintbrush")
+                            .foregroundStyle(Color.white)
+                            .font(.system(size: 24, weight: .medium))
+                    }
             }
-            .padding(.horizontal, 58)
-            .padding(.vertical, 10)
-            .background(LinearGradient(colors: [Color.graidentBtnColor, Color.mainColor], startPoint: .leading, endPoint: .trailing))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .shadow(color: Color.mainColor ,radius: 10)
+            .frame(maxWidth: .infinity)
+            .frame(height: 56)
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(.clear)
+                    .stroke(Color.mainColor,lineWidth: 4)
+                    .blur(radius: 4)
+            )
+            .overlay {
+                RoundedRectangle(cornerRadius: 20,style: .continuous)
+                    .fill(.clear)
+                    .stroke(Color.mainColor, lineWidth: 2)
+                    .blur(radius: 0.52)
+            }
+            .overlay{
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(.clear)
+                    .stroke(Color.white, lineWidth: 1)
+                    .blur(radius: 0.35)
+            }
+
         }
     }
 }

@@ -37,43 +37,6 @@ final class ARViewController: UIViewController {
         arScnView.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    @objc private func saveAlert() {
-        let showAlert = UIAlertController(title: "해당하는 타투를 저장할까요?", message: nil, preferredStyle: .alert)
-        let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 250, height: 230))
-        snapShot = view.snapshot
-        imageView.image = snapShot
-        showAlert.view.addSubview(imageView)
-        let height = NSLayoutConstraint(item: showAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 340)
-        let width = NSLayoutConstraint(item: showAlert.view!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
-        showAlert.view.addConstraint(height)
-        showAlert.view.addConstraint(width)
-        showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.saveImage()
-        }))
-        showAlert.addAction(UIAlertAction(title: "NO", style: .destructive))
-        self.present(showAlert,animated: true, completion: nil)
-    }
-
-    private func saveImage() {
-        UIImageWriteToSavedPhotosAlbum(snapShot!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-    }
-
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // 이미지 저장 중에 오류가 발생한 경우
-            let alert = UIAlertController(title: "오류", message: "이미지를 저장하는 동안 오류가 발생했습니다: \(error.localizedDescription)", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            // 이미지가 성공적으로 저장된 경우
-            let alert = UIAlertController(title: "성공", message: "이미지가 성공적으로 저장되었습니다.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-
     init(tatooImage: UIImage) {
         self.tatooImage = tatooImage
         self.tattoImageView = UIImageView(image: tatooImage)
@@ -155,6 +118,40 @@ extension ARViewController: ARSessionDelegate {
             print("PREDICTION ERRRRRROR")
         }
         return .background
+    }
+
+    private func saveImage() {
+        UIImageWriteToSavedPhotosAlbum(snapShot!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            showAlert(title: "오류", message: "이미지를 저장하는 동안 오류가 발생했습니다: \(error.localizedDescription)")
+        } else {
+            showAlert(title: "성공", message: "이미지가 성공적으로 저장되었습니다.")
+        }
+    }
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    @objc private func saveAlert() {
+        let showAlert = UIAlertController(title: "해당하는 타투를 저장할까요?", message: nil, preferredStyle: .alert)
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 250, height: 230))
+        snapShot = view.snapshot
+        imageView.image = snapShot
+        showAlert.view.addSubview(imageView)
+        let height = NSLayoutConstraint(item: showAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 340)
+        let width = NSLayoutConstraint(item: showAlert.view!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        showAlert.view.addConstraint(height)
+        showAlert.view.addConstraint(width)
+        showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.saveImage()
+        }))
+        showAlert.addAction(UIAlertAction(title: "NO", style: .destructive))
+        self.present(showAlert,animated: true, completion: nil)
     }
 }
 

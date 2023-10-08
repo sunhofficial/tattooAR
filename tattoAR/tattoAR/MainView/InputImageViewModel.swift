@@ -55,12 +55,30 @@ class InputImageViewModel: ObservableObject {
     }
     func applySaturationImage(to image: UIImage, slidervalue: Double) -> UIImage {
         let ciimage = CIImage(image: image)
+
           guard let filter = CIFilter(name: "CIColorControls") else { return image }
           filter.setValue(ciimage, forKey: kCIInputImageKey)
+
           filter.setValue(1.0 - slidervalue / 10 , forKey: kCIInputSaturationKey)
         guard let result = filter.outputImage else{ return image}
           guard let newCgImage = CIContext(options: nil).createCGImage(result, from: result.extent) else { return image }
           return UIImage(cgImage: newCgImage)
+    }
+    func applySketchEffect(to image: UIImage) -> UIImage {
+        let ciimage = CIImage(image: image)
+
+        // 채도를 낮춰 흑백으로 변환
+        guard let blackAndWhiteImage = ciimage?.applyingFilter("CIPhotoEffectMono") else { return image }
+
+        // 명암 대비를 높이기 위해 CIColorControls 필터 적용
+        guard let filter = CIFilter(name: "CIColorControls") else { return image }
+        filter.setValue(blackAndWhiteImage, forKey: kCIInputImageKey)
+        filter.setValue(2.0, forKey: kCIInputContrastKey) // 명암 대비 조절
+
+        guard let result = filter.outputImage else { return image }
+        guard let newCgImage = CIContext(options: nil).createCGImage(result, from: result.extent) else { return image }
+
+        return UIImage(cgImage: newCgImage)
     }
 
 }
