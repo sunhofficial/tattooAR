@@ -8,22 +8,19 @@
 import ARKit
 import SwiftUI
 
-struct ARViewRepresentable: UIViewRepresentable {
-    let arDelegate:ARDelegate
-
-    func makeUIView(context: Context) -> some UIView {
-        let arView = ARSCNView(frame: .zero)
-        arDelegate.setARView(arView)
-        return arView
+struct ARViewRepresentable: UIViewControllerRepresentable {
+    typealias UIViewControllerType = FaceARController
+    var tatooImage: UIImage
+    func makeUIViewController(context: Context) -> FaceARController {
+        return FaceARController(tattooImage: tatooImage)
     }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-
+    
+    func updateUIViewController(_ uiViewController: FaceARController, context: Context) {
+    
     }
+    
+
+
 }
 
-struct ARViewRepresentable_Previews: PreviewProvider {
-    static var previews: some View {
-        ARViewRepresentable(arDelegate: ARDelegate())
-    }
-}
+

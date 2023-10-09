@@ -8,8 +8,16 @@
 import SwiftUI
 struct TatooView: View {
     var tatooImage: UIImage
+    var handtattooMode: Bool
     var body: some View {
-        ARViewContainer(tatooImage: tatooImage).ignoresSafeArea(.all)
+        if(handtattooMode) {
+            ARViewContainer(tatooImage: tatooImage).ignoresSafeArea(.all)
+        }
+        else {
+            ARViewRepresentable( tatooImage: tatooImage)
+                .ignoresSafeArea(.all)
+        }
+
           
     }
 }

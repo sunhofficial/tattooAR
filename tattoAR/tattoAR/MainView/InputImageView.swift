@@ -43,6 +43,7 @@ extension InputImageView {
             isBlackToggle.toggle()
         } label: {
             Circle()
+                .stroke(Color.mainColor, lineWidth: 2)
                 .fill(isBlackToggle ? AngularGradient(gradient: Gradient(colors: [.red,.orange,.yellow,.green,.blue,.purple,.red]),center: .center) : AngularGradient(gradient: Gradient(colors: [.black]), center: .center))
                 .frame(width: 32,height: 32)
         }
@@ -103,7 +104,7 @@ extension InputImageView {
     }
 
     var NavigationBtn: some View {
-        NavigationLink(destination: TatooView(tatooImage: vm.applySketchEffect(to: vm.objectImage ?? UIImage()))) {
+        NavigationLink(destination: TatooView(tatooImage:  isBlackToggle ? vm.applySketchEffect(to: vm.objectImage ?? UIImage()) : vm.objectImage ?? UIImage(), handtattooMode: handtattooMode)) {
             HStack {
                 Label("타투하기", systemImage: "paintbrush")
                     .foregroundStyle(Color.mainColor)

@@ -11,43 +11,48 @@ import UIKit
 
 class ARDelegate: NSObject, ARSCNViewDelegate, ObservableObject {
     @Published var message:String = "starting AR"
+    private var arView: ARSCNView?
+    private var circles:[SCNNode] = []
+    private var trackedNode:SCNNode?
+    var tatooImage: UIImage?
 
     func setARView(_ arView: ARSCNView) {
         self.arView = arView
-
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
-        arView.session.run(configuration)
+        guard ARFaceTrackingConfiguration.isSupported else  {return}
+        let configuration = ARFaceTrackingConfiguration()
+        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
 
         arView.delegate = self
         arView.scene = SCNScene()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnARView))
         arView.addGestureRecognizer(tapGesture)
 
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panOnARView))
-        arView.addGestureRecognizer(panGesture)
     }
 
-    @objc func panOnARView(sender: UIPanGestureRecognizer) {
-        guard let arView = arView else { return }
-        let location = sender.location(in: arView)
-        switch sender.state {
-        case .began:
-            if let node = nodeAtLocation(location) {
-                trackedNode = node
-            }
-        case .changed:
-            if let node = trackedNode {
-                if let result = raycastResult(fromLocation: location) {
-                    moveNode(node, raycastResult:result)
-                }
-            }
-        default:
-            ()
-        }
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+           guard let arView = arView,
+                 let faceAnchor = arView.session.currentFrame?.anchors.first(where: { $0 is ARFaceAnchor }) as? ARFaceAnchor else {
+               return
+           }
 
+           // Face Anchor의 Transform으로 볼의 위치를 설정
+           let ballPosition = faceAnchor.transform.columns.3
+           trackedNode?.simdTransform = faceAnchor.transform
+
+           // 볼에 점을 찍어주는 함수 호출
+           addPointToBall(position: ballPosition)
+       }
+    private func addPointToBall(position: simd_float4) {
+        let imageNode = SCNNode()
+        let planeGeomtry = SCNPlane(width: 0.1, height: 0.1)
+        planeGeomtry.firstMaterial?.diffuse.contents = tatooImage
+        imageNode.geometry = planeGeomtry
+          let position3D = simd_float3(position.x, position.y, position.z)
+        if let position = trackedNode?.simdWorldPosition {
+                 imageNode.simdPosition = position
+             }
+        arView!.scene.rootNode.addChildNode(imageNode)
     }
-
     @objc func tapOnARView(sender: UITapGestureRecognizer) {
         guard let arView = arView else { return }
         let location = sender.location(in: arView)
@@ -59,23 +64,20 @@ class ARDelegate: NSObject, ARSCNViewDelegate, ObservableObject {
         }
     }
 
-    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-        print("camera did change \(camera.trackingState)")
-        switch camera.trackingState {
-        case .limited(_):
-            message = "tracking limited"
-        case .normal:
-            message =  "tracking ready"
-        case .notAvailable:
-            message = "cannot track"
-        }
-    }
+//    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+//        print("camera did change \(camera.trackingState)")
+//        switch camera.trackingState {
+//        case .limited(_):
+//            message = "tracking limited"
+//        case .normal:
+//            message =  "tracking ready"
+//        case .notAvailable:
+//            message = "cannot track"
+//        }
+//    }
 
     // MARK: - Private
 
-    private var arView: ARSCNView?
-    private var circles:[SCNNode] = []
-    private var trackedNode:SCNNode?
 
 
     private func addCircle(raycastResult: ARRaycastResult) {
@@ -90,13 +92,6 @@ class ARDelegate: NSObject, ARSCNViewDelegate, ObservableObject {
         arView?.scene.rootNode.addChildNode(circleNode)
         circles.append(circleNode)
 
-
-    }
-
-
-
-    private func moveNode(_ node:SCNNode, raycastResult:ARRaycastResult) {
-        node.simdWorldTransform = raycastResult.worldTransform
 
     }
 

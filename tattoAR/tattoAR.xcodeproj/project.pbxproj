@@ -38,9 +38,9 @@
 		C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED472AAA40F100527F67 /* InputImageView.swift */; };
 		C7A5AC732AADF043009124C8 /* InputImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */; };
 		C7B1EA5D2ACBEE6900C445CA /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */; };
-		C7B285B32ACFED6800813A6F /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B285B22ACFED6800813A6F /* ARView.swift */; };
 		C7BB400F2AD1E035002CD663 /* ARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB400E2AD1E035002CD663 /* ARDelegate.swift */; };
 		C7BB40112AD1E350002CD663 /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB40102AD1E350002CD663 /* ARViewRepresentable.swift */; };
+		C7BB401E2AD414D0002CD663 /* FaceARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB401D2AD414D0002CD663 /* FaceARController.swift */; };
 		C7D75E7A2AB772D9008BAEBF /* TatooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D75E792AB772D9008BAEBF /* TatooView.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,9 +77,9 @@
 		C79FED472AAA40F100527F67 /* InputImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageView.swift; sourceTree = "<group>"; };
 		C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageViewModel.swift; sourceTree = "<group>"; };
 		C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		C7B285B22ACFED6800813A6F /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		C7BB400E2AD1E035002CD663 /* ARDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDelegate.swift; sourceTree = "<group>"; };
 		C7BB40102AD1E350002CD663 /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
+		C7BB401D2AD414D0002CD663 /* FaceARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceARController.swift; sourceTree = "<group>"; };
 		C7D75E792AB772D9008BAEBF /* TatooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatooView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,8 +185,8 @@
 		C7B285B12ACFE8CC00813A6F /* ARView */ = {
 			isa = PBXGroup;
 			children = (
-				C7B285B22ACFED6800813A6F /* ARView.swift */,
 				C7BB400E2AD1E035002CD663 /* ARDelegate.swift */,
+				C7BB401D2AD414D0002CD663 /* FaceARController.swift */,
 				C7BB40102AD1E350002CD663 /* ARViewRepresentable.swift */,
 			);
 			name = ARView;
@@ -277,7 +277,6 @@
 				C79FED392AAA2D3D00527F67 /* Predictions.swift in Sources */,
 				C77DD9812AC66BB6005F398C /* ARViewController.swift in Sources */,
 				C79FED452AAA2D3D00527F67 /* CVPixelBuffer+Resize.swift in Sources */,
-				C7B285B32ACFED6800813A6F /* ARView.swift in Sources */,
 				C79FED442AAA2D3D00527F67 /* MLMultiArray+Image.swift in Sources */,
 				C79FED412AAA2D3D00527F67 /* CGImage+CVPixelBuffer.swift in Sources */,
 				C79FED362AAA2D3D00527F67 /* Array+Extensions.swift in Sources */,
@@ -288,6 +287,7 @@
 				C79FED3B2AAA2D3D00527F67 /* CGImagePropertyOrientation.swift in Sources */,
 				C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */,
 				C79FED3A2AAA2D3D00527F67 /* UIImage+Extensions.swift in Sources */,
+				C7BB401E2AD414D0002CD663 /* FaceARController.swift in Sources */,
 				C79FED3E2AAA2D3D00527F67 /* MLModel+Images.swift in Sources */,
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
 				C79FED462AAA2D3D00527F67 /* CVPixelBuffer+Rotate.swift in Sources */,
