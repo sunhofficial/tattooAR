@@ -12,11 +12,21 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
     private var arScnView: ARSCNView!
     var tattooImage: UIImage
     private var trackedNode: SCNNode?
-    
+    lazy var leftcheekNode: SCNNode = {
+        let scnnode = SCNNode(geometry: SCNPlane(width: 0.05, height: 0.05))
+        scnnode.geometry?.firstMaterial?.diffuse.contents = tattooImage
+        return scnnode
+    }()
+    lazy var rightcheekNode: SCNNode = {
+        let scnnode = SCNNode(geometry: SCNPlane(width: 0.05, height: 0.05))
+        scnnode.geometry?.firstMaterial?.diffuse.contents = tattooImage
+        return scnnode
+    }()
+
+
     init(tattooImage: UIImage) {
         self.tattooImage = tattooImage
         super.init(nibName: nil, bundle: nil)
-
     }
     
     required init?(coder: NSCoder) {
@@ -32,28 +42,42 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
         arScnView.delegate = self
         arScnView.scene = SCNScene()
     }
-
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-           guard let faceAnchor = arScnView.session.currentFrame?.anchors.first(where: { $0 is ARFaceAnchor }) as? ARFaceAnchor else {
-               return
-           }
-
-           // Face Anchor의 Transform으로 볼의 위치를 설정
-        let ballPosition = faceAnchor.transform.columns.3
-           trackedNode?.simdTransform = faceAnchor.transform
-
-           // 볼에 점을 찍어주는 함수 호출
-           addPointToBall(position: ballPosition)
-       }
-    private func addPointToBall(position: simd_float4) {
-        let imageNode = SCNNode()
-        let planeGeomtry = SCNPlane(width: 0.1, height: 0.1)
-        planeGeomtry.firstMaterial?.diffuse.contents = tattooImage
-        imageNode.geometry = planeGeomtry
-          let position3D = simd_float3(position.x, position.y, position.z)
-        if let position = trackedNode?.simdWorldPosition {
-                 imageNode.simdPosition = position
-             }
-        arScnView.scene.rootNode.addChildNode(imageNode)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        arScnView.session.pause()
     }
+
+    private func updateFeatures(for node: SCNNode, using anchor: ARFaceAnchor) {
+        let faceDetectionRequest = VNDetectFaceRectanglesRequest()
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        guard let device = MTLCreateSystemDefaultDevice() else { return nil}
+        guard let faceanchor = anchor as? ARFaceAnchor else  {return nil}
+        let faceGeomtry = ARSCNFaceGeometry(device: device)
+        let faceNode = SCNNode(geometry: faceGeomtry)
+        faceNode.geometry?.firstMaterial?.transparency = 0.0
+
+        faceNode.addChildNode(leftcheekNode)
+        faceNode.addChildNode(rightcheekNode)
+
+        return faceNode
+
+    }
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let faceAnchor = anchor as? ARFaceAnchor,
+          let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
+            return
+        }
+        let blendShapes = faceAnchor.blendShapes
+        if let cheekLeft = blendShapes[.cheekSquintLeft] as? Float, let cheekRight = blendShapes[.cheekSquintRight] as? Float {
+            leftcheekNode.position = SCNVector3(x: -0.05 - cheekLeft * 0.01, y: 0, z: 0)
+            rightcheekNode.position = SCNVector3(x: 0.05 + cheekRight * 0.01, y: 0, z: 0)
+
+        }
+        // 3
+        faceGeometry.update(from: faceAnchor.geometry)
+
+    }
+
 }
