@@ -16,11 +16,7 @@ struct ARViewRepresentable: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: FaceARController, context: Context) {
-    
     }
-    
-
-
 }
 
 

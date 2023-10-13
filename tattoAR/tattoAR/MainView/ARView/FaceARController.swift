@@ -12,11 +12,13 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
     private var arScnView: ARSCNView!
     var tattooImage: UIImage
     private var trackedNode: SCNNode?
+
     lazy var leftcheekNode: SCNNode = {
         let scnnode = SCNNode(geometry: SCNPlane(width: 0.05, height: 0.05))
         scnnode.geometry?.firstMaterial?.diffuse.contents = tattooImage
         return scnnode
     }()
+
     lazy var rightcheekNode: SCNNode = {
         let scnnode = SCNNode(geometry: SCNPlane(width: 0.05, height: 0.05))
         scnnode.geometry?.firstMaterial?.diffuse.contents = tattooImage
@@ -41,7 +43,10 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
         arScnView.session.run(configuartion,  options: [.resetTracking, .removeExistingAnchors])
         arScnView.delegate = self
         arScnView.scene = SCNScene()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveAlert))
+        arScnView.addGestureRecognizer(tapGestureRecognizer)
     }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         arScnView.session.pause()
@@ -57,27 +62,26 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
         let faceGeomtry = ARSCNFaceGeometry(device: device)
         let faceNode = SCNNode(geometry: faceGeomtry)
         faceNode.geometry?.firstMaterial?.transparency = 0.0
-
         faceNode.addChildNode(leftcheekNode)
         faceNode.addChildNode(rightcheekNode)
-
         return faceNode
-
     }
+
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor,
           let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
             return
         }
+        
         let blendShapes = faceAnchor.blendShapes
         if let cheekLeft = blendShapes[.cheekSquintLeft] as? Float, let cheekRight = blendShapes[.cheekSquintRight] as? Float {
             leftcheekNode.position = SCNVector3(x: -0.05 - cheekLeft * 0.01, y: 0, z: 0)
             rightcheekNode.position = SCNVector3(x: 0.05 + cheekRight * 0.01, y: 0, z: 0)
-
         }
-        // 3
         faceGeometry.update(from: faceAnchor.geometry)
-
+    }
+    @objc private func saveAlert() {
+        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
     }
 
 }

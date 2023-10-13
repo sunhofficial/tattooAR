@@ -126,8 +126,8 @@
             filePath = "tattoAR/MainView/ARView/FaceARController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "renderer(_:didUpdate:for:)"
             landmarkType = "7">
             <Locations>
@@ -161,6 +161,21 @@
                   endingLineNumber = "80"
                   offsetFromSymbolStart = "1264">
                </Location>
+               <Location
+                  uuid = "F0F9A795-85A4-4E69-91F9-7762791B9BE8 - 38406ac706b2e974"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tattoAR.FaceARController.renderer(_: __C.SCNSceneRenderer, didUpdate: __C.SCNNode, for: __C.ARAnchor) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/MainView/ARView/FaceARController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1304">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,8 +189,8 @@
             filePath = "tattoAR/MainView/ARView/FaceARController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "renderer(_:didUpdate:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,9 +205,153 @@
             filePath = "tattoAR/MainView/ARView/FaceARController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "renderer(_:didUpdate:for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A5F59B5D-9068-4656-AD94-63EB4F33A275 - 38406ac706b2e8f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tattoAR.FaceARController.renderer(_: __C.SCNSceneRenderer, didUpdate: __C.SCNNode, for: __C.ARAnchor) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/MainView/ARView/FaceARController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+               <Location
+                  uuid = "A5F59B5D-9068-4656-AD94-63EB4F33A275 - 38406ac706b2e995"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tattoAR.FaceARController.renderer(_: __C.SCNSceneRenderer, didUpdate: __C.SCNNode, for: __C.ARAnchor) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/MainView/ARView/FaceARController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4ED5720-594D-4858-8EDD-4EB77D71C930"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tattoAR/Common/TattooAlert.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "showAlert(in:snapshot:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B4ED5720-594D-4858-8EDD-4EB77D71C930 - fdecfed286d78afa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in static tattoAR.SaveAlertController.showAlert(in: __C.UIViewController, snapshot: __C.UIImage) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/Common/TattooAlert.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "B4ED5720-594D-4858-8EDD-4EB77D71C930 - fdecfed286d78afa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in static tattoAR.SaveAlertController.showAlert(in: __C.UIViewController, snapshot: __C.UIImage) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/Common/TattooAlert.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D06F607C-1939-4B38-923E-9620D983941D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tattoAR/Common/TattooAlert.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "saveImage(vc:uiimage:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D06F607C-1939-4B38-923E-9620D983941D - 846fbc4148492eab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static tattoAR.SaveAlertController.saveImage(uiimage: __C.UIImage) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/Common/TattooAlert.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "D06F607C-1939-4B38-923E-9620D983941D - 1ba35a690a7e040f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static tattoAR.SaveAlertController.saveImage(vc: __C.UIViewController, uiimage: __C.UIImage) -&gt; ()"
+                  moduleName = "tattoAR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/ARTatto/tattooAR/tattoAR/tattoAR/Common/TattooAlert.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBF3F184-C072-4208-B971-205C63FB972A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tattoAR/Common/TattooAlert.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "image(vc:_:didFinishSavingWithError:contextInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -38,10 +38,10 @@
 		C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED472AAA40F100527F67 /* InputImageView.swift */; };
 		C7A5AC732AADF043009124C8 /* InputImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */; };
 		C7B1EA5D2ACBEE6900C445CA /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */; };
-		C7BB400F2AD1E035002CD663 /* ARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB400E2AD1E035002CD663 /* ARDelegate.swift */; };
 		C7BB40112AD1E350002CD663 /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB40102AD1E350002CD663 /* ARViewRepresentable.swift */; };
 		C7BB401E2AD414D0002CD663 /* FaceARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB401D2AD414D0002CD663 /* FaceARController.swift */; };
 		C7D75E7A2AB772D9008BAEBF /* TatooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D75E792AB772D9008BAEBF /* TatooView.swift */; };
+		C7E30E192AD7E338001AE89B /* TattooAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E30E182AD7E338001AE89B /* TattooAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,10 +77,10 @@
 		C79FED472AAA40F100527F67 /* InputImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageView.swift; sourceTree = "<group>"; };
 		C7A5AC722AADF043009124C8 /* InputImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputImageViewModel.swift; sourceTree = "<group>"; };
 		C7B1EA5C2ACBEE6900C445CA /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		C7BB400E2AD1E035002CD663 /* ARDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDelegate.swift; sourceTree = "<group>"; };
 		C7BB40102AD1E350002CD663 /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
 		C7BB401D2AD414D0002CD663 /* FaceARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceARController.swift; sourceTree = "<group>"; };
 		C7D75E792AB772D9008BAEBF /* TatooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatooView.swift; sourceTree = "<group>"; };
+		C7E30E182AD7E338001AE89B /* TattooAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +143,7 @@
 		C79FED0C2AA9A7BC00527F67 /* tattoAR */ = {
 			isa = PBXGroup;
 			children = (
+				C7E30E172AD7E320001AE89B /* Common */,
 				C71ECC802AB6D75300E3127E /* Extensions */,
 				C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */,
 				C79FED0F2AA9A7BC00527F67 /* art.scnassets */,
@@ -185,12 +186,19 @@
 		C7B285B12ACFE8CC00813A6F /* ARView */ = {
 			isa = PBXGroup;
 			children = (
-				C7BB400E2AD1E035002CD663 /* ARDelegate.swift */,
 				C7BB401D2AD414D0002CD663 /* FaceARController.swift */,
 				C7BB40102AD1E350002CD663 /* ARViewRepresentable.swift */,
 			);
 			name = ARView;
 			path = MainView/ARView;
+			sourceTree = "<group>";
+		};
+		C7E30E172AD7E320001AE89B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C7E30E182AD7E338001AE89B /* TattooAlert.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +275,6 @@
 			files = (
 				C7D75E7A2AB772D9008BAEBF /* TatooView.swift in Sources */,
 				C7BB40112AD1E350002CD663 /* ARViewRepresentable.swift in Sources */,
-				C7BB400F2AD1E035002CD663 /* ARDelegate.swift in Sources */,
 				C75D79142AACF80100508BCB /* ImageLift.swift in Sources */,
 				C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */,
 				C79FED402AAA2D3D00527F67 /* CVPixelBuffer+Create.swift in Sources */,
@@ -287,6 +294,7 @@
 				C79FED3B2AAA2D3D00527F67 /* CGImagePropertyOrientation.swift in Sources */,
 				C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */,
 				C79FED3A2AAA2D3D00527F67 /* UIImage+Extensions.swift in Sources */,
+				C7E30E192AD7E338001AE89B /* TattooAlert.swift in Sources */,
 				C7BB401E2AD414D0002CD663 /* FaceARController.swift in Sources */,
 				C79FED3E2AAA2D3D00527F67 /* MLModel+Images.swift in Sources */,
 				C79FED432AAA2D3D00527F67 /* CGImage+RawBytes.swift in Sources */,
