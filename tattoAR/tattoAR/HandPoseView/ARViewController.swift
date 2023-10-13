@@ -121,7 +121,9 @@ extension ARViewController: ARSessionDelegate {
     }
 
     @objc private func saveAlert() {
-        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
+        let alertController = SaveAlertController(viewController: self)
+        alertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
+//        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
     }
 }
 

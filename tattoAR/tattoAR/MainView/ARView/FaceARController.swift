@@ -75,13 +75,15 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
         
         let blendShapes = faceAnchor.blendShapes
         if let cheekLeft = blendShapes[.cheekSquintLeft] as? Float, let cheekRight = blendShapes[.cheekSquintRight] as? Float {
-            leftcheekNode.position = SCNVector3(x: -0.05 - cheekLeft * 0.01, y: 0, z: 0)
-            rightcheekNode.position = SCNVector3(x: 0.05 + cheekRight * 0.01, y: 0, z: 0)
+            leftcheekNode.position = SCNVector3(x: -0.05 - cheekLeft * 0.01, y: 0, z: -0.02)
+            rightcheekNode.position = SCNVector3(x: 0.05 + cheekRight * 0.01, y: 0, z: -0.02)
         }
         faceGeometry.update(from: faceAnchor.geometry)
     }
     @objc private func saveAlert() {
-        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
+        let alertController = SaveAlertController(viewController: self)
+        alertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
+//        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
     }
 
 }
