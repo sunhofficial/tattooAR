@@ -83,7 +83,6 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
     @objc private func saveAlert() {
         let alertController = SaveAlertController(viewController: self)
         alertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
-//        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
     }
 
 }

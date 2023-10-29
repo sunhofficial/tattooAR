@@ -15,6 +15,7 @@ enum HandPose {
     case leftRock
     case background
 }
+
 final class ARViewController: UIViewController {
     var arScnView: ARSCNView!
     private var frameCounter: Int = 0 //매프레임마다 손모양 인식이 아니라 일정한 간격으로 수행하면 좀 더 부드러워짐
@@ -123,7 +124,6 @@ extension ARViewController: ARSessionDelegate {
     @objc private func saveAlert() {
         let alertController = SaveAlertController(viewController: self)
         alertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
-//        SaveAlertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
     }
 }
 
