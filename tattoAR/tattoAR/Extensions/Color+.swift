@@ -12,4 +12,6 @@ extension Color {
     static let mainColor = Color(UIColor(hexCode: "C00BED"))
     static let photoBackGround = Color(UIColor(hexCode: "2F3131"))
     static let photoFontColor = Color(UIColor(hexCode: "757575"))
+    static let fashionColor = Color(UIColor(hexCode: "2C2F37"))
+    static let skinColor = Color(UIColor(hexCode: "FFBC99"))
 }

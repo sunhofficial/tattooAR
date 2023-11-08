@@ -14,18 +14,22 @@ struct FasshionInputView: View {
     @State private var showBottomPicker = false
     @State private var croppedImage: UIImage?
     var body: some View {
-        VStack {
-            Text("상의")
-                .modifier(TitleModifier())
-            topView
-
-            Text("하의")
-                .modifier(TitleModifier())
-            bottomView
-            nextButton
-
+        ZStack {
+            Color.fashionColor
+                .ignoresSafeArea()
+            VStack {
+                Text("상의")
+                    .modifier(TitleModifier())
+                topView
+                    .padding(.vertical, 10)
+                Text("하의")
+                    .modifier(TitleModifier())
+                bottomView
+                    .padding(.vertical, 10)
+                nextButton
+            }
+            .padding(.horizontal, 30)
         }
-        .padding(.horizontal, 30)
     }
 }
 
@@ -38,41 +42,62 @@ extension FasshionInputView {
                 .padding(.vertical, 10)
         }
     }
+    @ViewBuilder
     var nextButton: some View {
-        NavigationLink (destination: FasshionARView()) {
-            HStack {
-                Label("옷조합하기", systemImage: "tshirt.fill")
-                    .foregroundStyle(Color.mainColor)
-                    .font(.system(size: 24, weight: .medium))
-                    .blur(radius: 8.0)
-                    .overlay {
-                        Label("옷조합하기", systemImage: "tshirt.fill")
-                            .foregroundStyle(Color.white)
-                            .font(.system(size: 24, weight: .medium))
-                    }
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 56)
-            .background(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(.clear)
-                    .stroke(Color.mainColor,lineWidth: 4)
-                    .blur(radius: 4)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: 20,style: .continuous)
-                    .fill(.clear)
-                    .stroke(Color.mainColor, lineWidth: 2)
-                    .blur(radius: 0.52)
-            }
-            .overlay{
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(.clear)
-                    .stroke(Color.white, lineWidth: 1)
-                    .blur(radius: 0.35)
+        if let combineImage = viewModel.combineImage {
+            NavigationLink (destination: FasshionARView(clothesImage: combineImage)) {
+                HStack {
+                    Label("옷조합하기", systemImage: "tshirt.fill")
+                        .foregroundStyle(Color.mainColor)
+                        .font(.system(size: 24, weight: .medium))
+                        .blur(radius: 8.0)
+                        .overlay {
+                            Label("옷조합하기", systemImage: "tshirt.fill")
+                                .foregroundStyle(Color.white)
+                                .font(.system(size: 24, weight: .medium))
+                        }
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+                .background(
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(.clear)
+                        .stroke(Color.mainColor,lineWidth: 4)
+                        .blur(radius: 4)
+                )
+                .overlay {
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(.clear)
+                        .stroke(Color.mainColor, lineWidth: 2)
+                        .blur(radius: 0.52)
+                }
+                .overlay{
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(.clear)
+                        .stroke(Color.white, lineWidth: 1)
+                        .blur(radius: 0.35)
+                }
             }
         }
+        else {
+            Text("상의와 하의를 모두 추가하여 주세요")
+                .foregroundStyle(Color.red )
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(.clear)
+                        .stroke(Color.mainColor,lineWidth: 4)
+                        .blur(radius: 4)
+                )
+                .overlay{
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(.clear)
+                        .stroke(Color.white, lineWidth: 1)
+                        .blur(radius: 0.35)
+                }
 
+        }
     }
     @ViewBuilder
     func imageView(withImage image: UIImage?, showPicker: Binding<Bool>, croppedImage: Binding<UIImage?>) -> some View {

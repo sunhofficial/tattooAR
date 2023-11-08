@@ -58,7 +58,7 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         guard let device = MTLCreateSystemDefaultDevice() else { return nil}
-        guard let faceanchor = anchor as? ARFaceAnchor else  {return nil}
+        guard let faceanchor = anchor as? ARFaceAnchor else  { return nil}
         let faceGeomtry = ARSCNFaceGeometry(device: device)
         let faceNode = SCNNode(geometry: faceGeomtry)
         faceNode.geometry?.firstMaterial?.transparency = 0.0
@@ -75,8 +75,8 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
         
         let blendShapes = faceAnchor.blendShapes
         if let cheekLeft = blendShapes[.cheekSquintLeft] as? Float, let cheekRight = blendShapes[.cheekSquintRight] as? Float {
-            leftcheekNode.position = SCNVector3(x: -0.05 - cheekLeft * 0.01, y: 0, z: -0.02)
-            rightcheekNode.position = SCNVector3(x: 0.05 + cheekRight * 0.01, y: 0, z: -0.02)
+            leftcheekNode.position = SCNVector3(x: -0.05 - cheekLeft * 0.01, y: 0, z: -0.03)
+            rightcheekNode.position = SCNVector3(x: 0.05 + cheekRight * 0.01, y: 0, z: -0.03)
         }
         faceGeometry.update(from: faceAnchor.geometry)
     }
@@ -84,5 +84,4 @@ class FaceARController: UIViewController, ARSCNViewDelegate {
         let alertController = SaveAlertController(viewController: self)
         alertController.showAlert(in: self, snapshot: view.snapshot ?? UIImage())
     }
-
 }

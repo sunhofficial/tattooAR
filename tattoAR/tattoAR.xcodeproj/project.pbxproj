@@ -13,10 +13,14 @@
 		C715B4AF2AEE6BED00A2C3EF /* FasshionARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715B4AE2AEE6BED00A2C3EF /* FasshionARView.swift */; };
 		C71ECC822AB6D75D00E3127E /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71ECC812AB6D75D00E3127E /* Color+.swift */; };
 		C71ECC842AB6D76500E3127E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71ECC832AB6D76500E3127E /* UIColor+.swift */; };
+		C73951232AFB976A00CD317C /* person.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C73951222AFB976A00CD317C /* person.usdz */; };
 		C75D79142AACF80100508BCB /* ImageLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D79132AACF80100508BCB /* ImageLift.swift */; };
+		C771136A2AEE82A800BAB128 /* FashionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77113692AEE82A800BAB128 /* FashionContainer.swift */; };
+		C771136D2AF0619200BAB128 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = C771136C2AF0619200BAB128 /* FocusEntity */; };
 		C77DD9792AC64B27005F398C /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9782AC64B27005F398C /* ARViewContainer.swift */; };
 		C77DD9812AC66BB6005F398C /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9802AC66BB6005F398C /* ARViewController.swift */; };
 		C77DD9872AC7E1FD005F398C /* HandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C77DD9862AC7E1FD005F398C /* HandModel.mlmodel */; };
+		C78E7D082AF8AFF400C2E220 /* FasshionARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E7D072AF8AFF400C2E220 /* FasshionARViewController.swift */; };
 		C79FED0E2AA9A7BC00527F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */; };
 		C79FED102AA9A7BC00527F67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C79FED0F2AA9A7BC00527F67 /* art.scnassets */; };
 		C79FED152AA9A7BC00527F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79FED132AA9A7BC00527F67 /* Main.storyboard */; };
@@ -55,10 +59,13 @@
 		C715B4AE2AEE6BED00A2C3EF /* FasshionARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FasshionARView.swift; sourceTree = "<group>"; };
 		C71ECC812AB6D75D00E3127E /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		C71ECC832AB6D76500E3127E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		C73951222AFB976A00CD317C /* person.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = person.usdz; sourceTree = "<group>"; };
 		C75D79132AACF80100508BCB /* ImageLift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLift.swift; sourceTree = "<group>"; };
+		C77113692AEE82A800BAB128 /* FashionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionContainer.swift; sourceTree = "<group>"; };
 		C77DD9782AC64B27005F398C /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		C77DD9802AC66BB6005F398C /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		C77DD9862AC7E1FD005F398C /* HandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandModel.mlmodel; sourceTree = SOURCE_ROOT; };
+		C78E7D072AF8AFF400C2E220 /* FasshionARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FasshionARViewController.swift; sourceTree = "<group>"; };
 		C79FED0A2AA9A7BC00527F67 /* tattoAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattoAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79FED0F2AA9A7BC00527F67 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C771136D2AF0619200BAB128 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				C715B4AE2AEE6BED00A2C3EF /* FasshionARView.swift */,
+				C78E7D072AF8AFF400C2E220 /* FasshionARViewController.swift */,
+				C77113692AEE82A800BAB128 /* FashionContainer.swift */,
 			);
 			path = FasshionArView;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E30E1B2ADA70A7001AE89B /* tattoAR.entitlements */,
+				C73951222AFB976A00CD317C /* person.usdz */,
 				C7E30E172AD7E320001AE89B /* Common */,
 				C71ECC802AB6D75300E3127E /* Extensions */,
 				C79FED0D2AA9A7BC00527F67 /* AppDelegate.swift */,
@@ -247,6 +258,9 @@
 			dependencies = (
 			);
 			name = tattoAR;
+			packageProductDependencies = (
+				C771136C2AF0619200BAB128 /* FocusEntity */,
+			);
 			productName = tattoAR;
 			productReference = C79FED0A2AA9A7BC00527F67 /* tattoAR.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +289,9 @@
 				Base,
 			);
 			mainGroup = C79FED012AA9A7BC00527F67;
+			packageReferences = (
+				C771136B2AF0619200BAB128 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = C79FED0B2AA9A7BC00527F67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C73951232AFB976A00CD317C /* person.usdz in Resources */,
 				C79FED102AA9A7BC00527F67 /* art.scnassets in Resources */,
 				C79FED1A2AA9A7BD00527F67 /* LaunchScreen.storyboard in Resources */,
 				C79FED172AA9A7BD00527F67 /* Assets.xcassets in Resources */,
@@ -311,6 +329,7 @@
 				C79FED402AAA2D3D00527F67 /* CVPixelBuffer+Create.swift in Sources */,
 				C79FED422AAA2D3D00527F67 /* NonMaxSuppression.swift in Sources */,
 				C77DD9792AC64B27005F398C /* ARViewContainer.swift in Sources */,
+				C771136A2AEE82A800BAB128 /* FashionContainer.swift in Sources */,
 				C77DD9872AC7E1FD005F398C /* HandModel.mlmodel in Sources */,
 				C79FED392AAA2D3D00527F67 /* Predictions.swift in Sources */,
 				C715B4AC2AED371A00A2C3EF /* CustomImagePicker.swift in Sources */,
@@ -326,6 +345,7 @@
 				C79FED3B2AAA2D3D00527F67 /* CGImagePropertyOrientation.swift in Sources */,
 				C715B4AF2AEE6BED00A2C3EF /* FasshionARView.swift in Sources */,
 				C79FED482AAA40F100527F67 /* InputImageView.swift in Sources */,
+				C78E7D082AF8AFF400C2E220 /* FasshionARViewController.swift in Sources */,
 				C79FED3A2AAA2D3D00527F67 /* UIImage+Extensions.swift in Sources */,
 				C7E30E192AD7E338001AE89B /* SaveAlertController.swift in Sources */,
 				C7BB401E2AD414D0002CD663 /* FaceARController.swift in Sources */,
@@ -561,6 +581,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C771136B2AF0619200BAB128 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C771136C2AF0619200BAB128 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C771136B2AF0619200BAB128 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C79FED022AA9A7BC00527F67 /* Project object */;
 }

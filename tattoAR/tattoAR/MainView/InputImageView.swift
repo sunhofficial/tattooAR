@@ -19,6 +19,7 @@ struct InputImageView: View {
                 Color.backGround
                 VStack {
                     HStack{
+                        fashionNavigationLink
                         Spacer()
                         ColorToBlackBtn
                     }
@@ -103,6 +104,38 @@ extension InputImageView {
         }
     }
 
+    var fashionNavigationLink: some View {
+        NavigationLink(destination: FasshionInputView()) {
+            Label("옷코디하기->", systemImage: "tshirt")
+                .foregroundStyle(Color.mainColor)
+                .font(.system(size: 20, weight: .medium))
+                .blur(radius: 8.0)
+                .overlay {
+                    Label("옷코디하기->", systemImage: "tshirt")
+                        .foregroundStyle(Color.white)
+                        .font(.system(size: 20, weight: .medium))
+                }
+        }
+        .frame(width: 250,height: 40)
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(.clear)
+                .stroke(Color.mainColor,lineWidth: 4)
+                .blur(radius: 4)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 20,style: .continuous)
+                .fill(.clear)
+                .stroke(Color.mainColor, lineWidth: 2)
+                .blur(radius: 0.52)
+        }
+        .overlay{
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(.clear)
+                .stroke(Color.white, lineWidth: 1)
+                .blur(radius: 0.35)
+        }
+    }
     var NavigationBtn: some View {
         NavigationLink(destination: TatooView(tatooImage:  isBlackToggle ? vm.applySketchEffect(to: vm.objectImage ?? UIImage()) : vm.objectImage ?? UIImage(), handtattooMode: handtattooMode)) {
             HStack {

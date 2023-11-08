@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let firstView = FasshionInputView()
+        let firstView = InputImageView()
         let hostingController = UIHostingController(rootView: firstView)
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = hostingController
